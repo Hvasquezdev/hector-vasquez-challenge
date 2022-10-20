@@ -19,13 +19,4 @@ const shuffleArray = (arr = []) => {
   return arrToShuffle;
 };
 
-const delay = async (delayTime = 0) => {
-  return new Promise((resolve) => {
-    const timeout = setTimeout(() => {
-      resolve();
-      clearTimeout(timeout);
-    }, delayTime);
-  });
-};
-
-export { shuffleArrayOfObjects, shuffleArray, delay };
+export { shuffleArrayOfObjects, shuffleArray };
