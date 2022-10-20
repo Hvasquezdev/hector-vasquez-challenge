@@ -8,15 +8,15 @@ const props = defineProps({
     type: String,
     default: "",
   },
-  value: {
+  modelValue: {
     type: [String, Number],
     default: "",
   },
 });
-const emit = defineEmits(["input"]);
+const emit = defineEmits(["update:modelValue"]);
 
 const handleInput = (e) => {
-  emit("input", e.target.value);
+  emit("update:modelValue", e.target.value);
 };
 </script>
 
@@ -25,7 +25,7 @@ const handleInput = (e) => {
     class="base-input"
     :type="props.type"
     :placeholder="props.placeholder"
-    :value="value"
+    :value="modelValue"
     @input="handleInput"
   />
 </template>
