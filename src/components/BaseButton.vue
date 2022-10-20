@@ -23,7 +23,7 @@ const classNames = computed(() => ({
   width: 100%;
   border-radius: var(--button-border-radius);
   background-color: transparent;
-  padding: 5px 19px;
+  padding: var(--button-padding);
   font-family: var(--ff-popins);
   font-size: var(--fs-s);
   font-weight: var(--fw-bold);

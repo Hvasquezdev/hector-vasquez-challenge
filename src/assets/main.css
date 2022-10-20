@@ -1,29 +1,17 @@
 :root {
   --orange: #f9a826;
-  --dark-blue: #1d355d;
-  --dark-blue-secondary: #2f527b;
-  --positive: #60bf88;
-  --negative: #ea8282;
   --white: #ffffff;
   --purple: #6066d0cc;
   --purple-light: #6066d0b3;
   --dark-purple: #5256a1;
-  --black: #000000;
-  --black-secondary: #181818;
   
   --fw-bold: 700;
-  --fw-medium: 500;
-  --fw-normal: 400;
   
   --border-radius: 24px;
   --button-border-radius: 12px;
-  --button-padding: 14px 36px;
+  --button-padding: 5px 19px;
   
-  --fs-ss: 14px;
   --fs-s: 18px;
-  --fs-m: 24px;
-  --fs-l: 36px;
-  --fs-xl: 48px;
   
   --ff-popins: 'Poppins', 'SF Pro Text', -apple-system, BlinkMacSystemFont, Roboto,
     'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
