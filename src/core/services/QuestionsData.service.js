@@ -1,4 +1,4 @@
-import { shuffleArrayOfObjects, delay } from "./../utils/index";
+import { shuffleArrayOfObjects } from "./../utils/index";
 import { QUESTIONS } from "./../constants/questions";
 
 export class QuestionsDataService {
@@ -11,8 +11,7 @@ export class QuestionsDataService {
     }));
   };
 
-  getQuestionsData = async () => {
-    await delay(2000);
+  getQuestionsData = () => {
     return this._getRandomizeQuestions();
   };
 }
