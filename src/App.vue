@@ -1,4 +1,7 @@
 <script setup>
+import { ref, computed, defineAsyncComponent } from "vue";
+import { useGameManager } from "./composables/useGameManager";
+
 import BaseButton from "./components/BaseButton.vue";
 import BaseInput from "./components/BaseInput.vue";
 import BaseCard from "./components/BaseCard.vue";
@@ -6,8 +9,9 @@ import BaseTitle from "./components/BaseTitle.vue";
 import GameOptions from "./components/GameOptions.vue";
 import GameActions from "./components/GameActions.vue";
 
-import { ref, computed } from "vue";
-import { useGameManager } from "./composables/useGameManager";
+const GameResults = defineAsyncComponent(() =>
+  import("./components/GameResults.vue")
+);
 
 const userName = ref("");
 const currentView = ref("home");
@@ -24,6 +28,7 @@ const {
   correctAnswersCount,
   isWinner,
   minCorrectAnswersToWin,
+  wrongAnswersCount,
 } = useGameManager();
 
 const handleUpdateCurrentView = (view) => {
@@ -83,17 +88,24 @@ const selectedAnswerLabel = computed(() => {
       />
     </base-card>
 
-    <base-card v-if="currentView === 'results'" class="game-board">
-      <base-title class="title-text">
-        Right answers {{ correctAnswersCount }} of {{ questions.length }}
-      </base-title>
-
-      <p v-if="isWinner">Congrats! You pass the quiz game!</p>
-      <p v-else>
-        You need to answer at leats {{ minCorrectAnswersToWin }} to pass the
-        quiz
-      </p>
-    </base-card>
+    <game-results
+      v-if="currentView === 'results'"
+      :correct-answers-count="correctAnswersCount"
+      :wrong-answers-count="wrongAnswersCount"
+      :questions-count="questions.length"
+      :min-correct-answers-to-win="minCorrectAnswersToWin"
+      :is-winner="isWinner"
+      :pie-chart-data="[
+        { label: 'Correct', value: correctAnswersCount },
+        { label: 'Wrong', value: wrongAnswersCount },
+      ]"
+      :column-chart-data="[
+        { user: userName, value: correctAnswersCount },
+        { user: 'Hector', value: 5 },
+        { user: 'Luis', value: 2 },
+        { user: 'Jose', value: 4 },
+      ]"
+    />
   </div>
 </template>
 
