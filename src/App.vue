@@ -53,12 +53,7 @@ const selectedAnswerLabel = computed(() => {
   <div class="app">
     <base-card v-if="currentView === 'home'">
       <base-title class="title-text">Quiz Game</base-title>
-      <base-input
-        type="text"
-        placeholder="Full name"
-        :value="userName"
-        @input="($event) => (userName = $event)"
-      />
+      <base-input type="text" placeholder="Full name" v-model.trim="userName" />
       <base-button
         class="base-button"
         is-selected
@@ -113,9 +108,10 @@ const selectedAnswerLabel = computed(() => {
 .app {
   width: 100%;
   height: 100vh;
-  background-color: var(--black-secondary);
+  background-color: var(--dark-purple);
   display: grid;
   place-items: center;
+  padding: 16px;
 }
 
 .base-input {
