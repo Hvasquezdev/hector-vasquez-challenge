@@ -63,6 +63,9 @@ export const useGameManager = () => {
       (answer) => answer.answer.isCorrect
     ).length;
   };
+  const wrongAnswersCount = computed(() => {
+    return selectedAnswers.value.length - correctAnswersCount.value;
+  });
 
   return {
     questions,
@@ -79,5 +82,6 @@ export const useGameManager = () => {
     isWinner,
     minCorrectAnswersToWin,
     correctAnswersCount,
+    wrongAnswersCount,
   };
 };
