@@ -18,8 +18,7 @@ const handleOptionClick = (option) => {
 };
 
 const isSelectedOption = (option) => {
-  if (!props.currentSelectedOption) return false;
-  return option === props.currentSelectedOption;
+  return option === props?.currentSelectedOption;
 };
 </script>
 
