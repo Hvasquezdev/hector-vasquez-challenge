@@ -5,8 +5,8 @@ export const useGameManager = () => {
   const questions = ref([]);
   const questionsDataService = new QuestionsDataService();
 
-  const getRandomQuestion = async () => {
-    const data = await questionsDataService.getQuestionsData();
+  const getRandomQuestion = () => {
+    const data = questionsDataService.getQuestionsData();
     questions.value = data;
   };
 
