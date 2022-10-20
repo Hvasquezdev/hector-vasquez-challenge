@@ -8,6 +8,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@amcharts/amcharts5": "^5.2.31",
     "vue": "^3.2.38"
   },
   "devDependencies": {
