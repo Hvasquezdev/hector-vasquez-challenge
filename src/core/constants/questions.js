@@ -18,7 +18,7 @@ export const QUESTIONS = [
         label: "Russia",
         isCorrect: false,
       },
-    ]
+    ],
   },
   {
     label: "When did the second world war end?",
@@ -39,7 +39,7 @@ export const QUESTIONS = [
         label: "1942",
         isCorrect: false,
       },
-    ]
+    ],
   },
   {
     label: "Which was the first country to issue paper currency?",
@@ -60,7 +60,7 @@ export const QUESTIONS = [
         label: "China",
         isCorrect: true,
       },
-    ]
+    ],
   },
   {
     label: "Which city hosted the 1996 Summer Olympics?",
@@ -81,7 +81,7 @@ export const QUESTIONS = [
         label: "Beijing",
         isCorrect: false,
       },
-    ]
+    ],
   },
   {
     label: "Who invented the telephone?",
@@ -102,6 +102,6 @@ export const QUESTIONS = [
         label: "Marie Curie",
         isCorrect: false,
       },
-    ]
+    ],
   },
 ];
